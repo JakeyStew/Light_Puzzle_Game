@@ -71,7 +71,7 @@ namespace LightsPuzzleGame
             Container.Children.Cast<Button>().ToList().ForEach(button => 
             {
                 //Change content and background to default
-                //button.Content = string.Empty;
+                button.Content = string.Empty;
                 button.Background = Brushes.Green;
 
                 var column = Grid.GetColumn(button);

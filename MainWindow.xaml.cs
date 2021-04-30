@@ -12,7 +12,7 @@ namespace LightsPuzzleGame
     /// </summary>
     public partial class MainWindow : Window
     {
-        #region
+        #region Member Variables
         /// <summary>
         /// Holds the current results of cells in the acitve game
         /// </summary>
@@ -169,6 +169,7 @@ namespace LightsPuzzleGame
             }
         }
 
+        #region Cells Within Grid
         /// <summary>
         /// Define if a cell is within the grid.
         /// </summary>
@@ -187,6 +188,7 @@ namespace LightsPuzzleGame
             }
             return true;
         }
+        #endregion
 
         /// <summary>
         /// Check for the win condition and restart the game
@@ -204,7 +206,7 @@ namespace LightsPuzzleGame
 
             if(inactiveCount >= 25)
             {
-                NewGame();
+                mGameEnded = true;
             }
         }
     }

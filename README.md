@@ -4,7 +4,7 @@
 
 # :jigsaw: Light Puzzle Game :joystick:
 
-[Light Puzzler] is a simple to use puzzle game. Simple try to turn all the tiles on adn you win, nothing complicated about that, or is there?
+[Light Puzzler] is a simple to use puzzle game. Simply try to turn all the tiles off and you win, nothing complicated about that, or is there?
 
 This App was built within a day for a technical challenge. It taught me more about the C# language and .Net framework alongside some simple XAML for the front end user interface.
 

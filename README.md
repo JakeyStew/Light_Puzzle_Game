@@ -16,7 +16,7 @@ This App was built within a day for a technical challenge. It taught me more abo
 
 ## Running
 
-This app is very simple to run, just download the source code and built it in VSCode or Visual Studio 2019+. You can also run the .exe in the Release folder.
+This app is very simple to run, just download the source code and build it in VSCode or Visual Studio 2019+. You can also run the .exe in the Release folder.
 
 ## Screenshots
 

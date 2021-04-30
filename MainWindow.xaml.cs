@@ -193,16 +193,16 @@ namespace LightsPuzzleGame
         /// </summary>
         private void CheckForWin()
         {
-            int activeCount = 0;
+            int inactiveCount = 0;
             for(var i = 0; i < mResults.Length; i++)
             {
-                if(mResults[i] == MarkType.active)
+                if(mResults[i] == MarkType.inactive)
                 {
-                    activeCount++;
+                    inactiveCount++;
                 }
             }
 
-            if(activeCount >= 25)
+            if(inactiveCount >= 25)
             {
                 NewGame();
             }

@@ -210,7 +210,9 @@ namespace LightsPuzzleGame
                         {
                             //Console.WriteLine("Neighbor of " + column + " " + row + " - " + colNum + " " + rowNum); //Used for debugging the neighbouring cells
                             var neighbourIndex = colNum + (rowNum * 5);
+                            //Will get the Button object using the column and row number obtained from the loops above
                             Button nearButton = Container.Children.Cast<Button>().First(e => Grid.GetRow(e) == rowNum && Grid.GetColumn(e) == colNum);
+                            //Only want the NORTH, SOUTH, EAST and WEST buttons, so ignores the diagonals
                             if (rowNum == row || colNum == column)
                             {
                                 if (mResults[neighbourIndex] == MarkType.active)

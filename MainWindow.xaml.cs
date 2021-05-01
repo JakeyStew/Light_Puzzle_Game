@@ -21,6 +21,10 @@ namespace LightsPuzzleGame
         /// True if the game has ended
         /// </summary>
         private bool mGameEnded;
+        /// <summary>
+        /// Random number generator
+        /// </summary>
+        private Random randNum = new Random();
         #endregion
 
         #region Constructor
@@ -43,13 +47,23 @@ namespace LightsPuzzleGame
             //Create a new blank array
             mResults = new MarkType[25];
 
-            Random randNum = new Random();
-            int[] numbersToUse = new int[5];
+            //Get a random number between specified numbers
+            int randomArraySize = randNum.Next(4, 6);
+            //Set the Array size to be a random size, gives us a random amount of turned on lights
+            int[] cellIndexToUse = new int[randomArraySize];
 
             //Get 5 random indexes in the mResults array
-            for (var i = 0; i < numbersToUse.Length; i++)
+            for (var i = 0; i < cellIndexToUse.Length; i++)
             {
-                numbersToUse[i] = randNum.Next(0, 25);
+                //Get random cellIndex from 0-25
+                int randomIndex = randNum.Next(0, 25);
+                while (true)
+                {
+                    //Confirm if the random value already exists in array, if false add to array
+                    if (!Contains(cellIndexToUse, randomIndex)) break;
+                }
+                //Add random index to array
+                cellIndexToUse[i] = randomIndex;
             }
 
             //Set every value to be inactive
@@ -57,9 +71,9 @@ namespace LightsPuzzleGame
             {
                 mResults[i] = MarkType.inactive;
                 //Set a specified amount of them to be active
-                for(var j = 0; j < numbersToUse.Length; j++)
+                for(var j = 0; j < cellIndexToUse.Length; j++)
                 {
-                    int number = numbersToUse[j];
+                    int number = cellIndexToUse[j];
                     if(i == number)
                     {
                         mResults[i] = MarkType.active;
@@ -87,6 +101,25 @@ namespace LightsPuzzleGame
             //Set the game to be not finished
             mGameEnded = false;
         }
+
+        #region Array Duplicate Checker
+        /// <summary>
+        /// Checks the array for duplicate values
+        /// </summary>
+        /// <param name="array"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        private bool Contains(int[] array, int value)
+        {
+            //Loop through our array
+            for (int i = 0; i < array.Length; i++)
+            {
+                //If value is in the array, we need to run again
+                if (array[i] == value) return true;
+            }
+            return false;
+        }
+        #endregion
 
         /// <summary>
         /// Handles button click event
@@ -117,13 +150,15 @@ namespace LightsPuzzleGame
             {
                 button.Background = Brushes.Yellow;
                 mResults[index] = MarkType.active;
-                CheckSurroundings(column, row);
+                //Check Neighbouring Cells
+                CheckNeighbourss(column, row);
             } 
             else
             {
                 button.Background = Brushes.Green;
                 mResults[index] = MarkType.inactive;
-                CheckSurroundings(column, row);
+                //Check Neighbouring Cells
+                CheckNeighbourss(column, row);
             }
 
             CheckForWin();
@@ -134,7 +169,7 @@ namespace LightsPuzzleGame
         /// </summary>
         /// <param name="column"></param>
         /// <param name="row"></param>
-        private void CheckSurroundings(int column, int row)
+        private void CheckNeighbourss(int column, int row)
         {
             for (int colNum = column - 1; colNum <= (column + 1); colNum += 1)
             {
@@ -180,11 +215,13 @@ namespace LightsPuzzleGame
         {
             if ((colNum < 0) || (rowNum < 0))
             {
-                return false;    //false if row or col are negative
+                //false if row or col are negative
+                return false;
             }
             if ((colNum >= 5) || (rowNum >= 5))
             {
-                return false;    //false if row or col are > 75
+                //false if row or col are > 5
+                return false;
             }
             return true;
         }
@@ -204,8 +241,10 @@ namespace LightsPuzzleGame
                 }
             }
 
+            //Check that we have turned off all 25 cells
             if(inactiveCount >= 25)
             {
+                //End the game, causes restart
                 mGameEnded = true;
             }
         }

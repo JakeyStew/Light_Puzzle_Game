@@ -12,3 +12,4 @@ D:\Desktop\C# Projects\LightsPuzzleGame\Light_Puzzle_Game\obj\Release\LightsPuzz
 D:\Desktop\C# Projects\LightsPuzzleGame\Light_Puzzle_Game\obj\Release\LightsPuzzleGame.csproj.CoreCompileInputs.cache
 D:\Desktop\C# Projects\LightsPuzzleGame\Light_Puzzle_Game\obj\Release\LightsPuzzleGame.exe
 D:\Desktop\C# Projects\LightsPuzzleGame\Light_Puzzle_Game\obj\Release\LightsPuzzleGame.pdb
+D:\Desktop\C# Projects\LightsPuzzleGame\Light_Puzzle_Game\obj\Release\LightsPuzzleGame.csprojAssemblyReference.cache

@@ -20,7 +20,7 @@ This app is very simple to run, just download the source code and build it in VS
 
 ## Screenshots
 
-![Application in progress](/Screenshots/Game_1.png?raw=true "Game Running") ![Application in progress](/Screenshots/Game_2.png?raw=true "Game Running") ![Application in progress](/Screenshots/Game_3.png?raw=true "Game Running")
+![Application in progress](/Screenshots/Game_1.png?raw=true "Game Running") ![Application in progress](/Screenshots/Game_2.png?raw=true "Game Running") ![Application in progress](/Screenshots/Game_3.png?raw=true "Game Running") ![Application in progress](/Screenshots/Game_Gif.gif?raw=true "Game Running")
 
 ## Links
 

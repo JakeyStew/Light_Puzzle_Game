@@ -93,7 +93,7 @@ namespace LightsPuzzleGame
         /// </summary>
         /// <param name="sender">The button that was clicked</param>
         /// <param name="e">The events of the click</param>
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public void Button_Click(object sender, RoutedEventArgs e)
         {
             //Start a new game on the click after it finished
             if(mGameEnded)

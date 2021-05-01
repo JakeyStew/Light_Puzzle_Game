@@ -71,15 +71,42 @@ namespace LightsPuzzleGame
             {
                 mResults[i] = MarkType.inactive;
                 //Set a specified amount of them to be active
-                for(var j = 0; j < cellIndexToUse.Length; j++)
+                for (var j = 0; j < cellIndexToUse.Length; j++)
                 {
                     int number = cellIndexToUse[j];
-                    if(i == number)
+                    if (i == number)
                     {
                         mResults[i] = MarkType.active;
                     }
                 }
             }
+
+            #region Win Test Code
+            //TESTING WIN CONDITION
+            /******************************************************/
+            //List<int> test = new List<int>(3);
+            //test.Add(0);
+            //test.Add(1);
+            //test.Add(5);
+
+            //int[] cellIndexToUse = test.ToArray();
+
+            ////Set every value to be inactive
+            //for (var i = 0; i < mResults.Length; i++)
+            //{
+            //    mResults[i] = MarkType.inactive;
+            //    //Set a specified amount of them to be active
+            //    for (var j = 0; j < cellIndexToUse.Length; j++)
+            //    {
+            //        int number = cellIndexToUse[j];
+            //        if (i == number)
+            //        {
+            //            mResults[i] = MarkType.active;
+            //        }
+            //    }
+            //}
+            /******************************************************/
+            #endregion
 
             // Iterate every button on the grid (Container)
             Container.Children.Cast<Button>().ToList().ForEach(button => 

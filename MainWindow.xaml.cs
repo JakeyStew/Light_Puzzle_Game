@@ -274,6 +274,7 @@ namespace LightsPuzzleGame
             if(inactiveCount >= 25)
             {
                 //End the game, causes restart
+                /* NOTE: TO RESTART YOU CLICK AGAIN ANYWHERE ON THE SCREEN */
                 mGameEnded = true;
             }
         }
